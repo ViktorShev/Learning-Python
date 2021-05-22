@@ -12,7 +12,7 @@ class SQLDataSource(DataSource):
         print ("Content inserted to db")
         
     def __prepareSQLSth(self, article):
-        return "insert into ARTICLES (id, content) values (some id, %s)" % article.getContent()
+        return "insert into ARTICLES (id, content) values (some id, %s )" % article.getContent()
     
     def execSQL(self, sql):
         print ("executint sql order" + sql)
