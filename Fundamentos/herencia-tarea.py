@@ -31,5 +31,4 @@ coche = Coche('Azul', 4, 200)
 print(coche)
 
 bicicleta = Bicicleta('Negra', 2, 20, 'Montaña')
-print(bicicleta)
-
+print(bicicleta)                                                   

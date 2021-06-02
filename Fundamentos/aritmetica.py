@@ -6,12 +6,16 @@ class Aritmetica:
     def sumar(self):
         """Se realiza la operacion con los atributos de la clase"""
         return self.operando1 + self.operando2
+    
     def restar(self):
         return self.operando1 - self.operando2
+    
     def multip(self):
         return self.operando1 * self.operando2
+    
     def div(self):
         return self.operando1 // self.operando2
+    
     def pow(self):
         return self.operando1 ** self.operando2
    
