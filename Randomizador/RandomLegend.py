@@ -3,6 +3,7 @@ from random import randrange
 
 legends = ['Wraith', 'Bangalore', 'Mirage', 'Caustic', 'Octane', 'Revenenant', 'Horizon', 'Fuse', 'Gibby', 'Wattson', 'Rampart', 'Loba', 'Lifeline', 'Bloodhound', 'Pathfinder', 'Crypto', 'Valk']
 
+#old code
 #def random_squad():
 #    random_squad = []
 #    stop_value = 0
@@ -16,6 +17,7 @@ legends = ['Wraith', 'Bangalore', 'Mirage', 'Caustic', 'Octane', 'Revenenant', '
 #            print(random_squad)
 #            break 
 
+#improved code
 def random_squad():
     random_squad = []
     candidates = legends[:]
