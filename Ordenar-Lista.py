@@ -22,3 +22,4 @@ for j in range(0, len(numList)):
         aux = numList[j]    
         numList[j] = numList[i]
         numList[i] = aux
+        
