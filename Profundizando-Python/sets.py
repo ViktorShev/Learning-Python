@@ -66,7 +66,7 @@ print(pelo_negro.symmetric_difference(ojos_cafe))
 print(menores_30.issubset(pelo_negro))
 
 # Preguntar si un set contiene a otro set (superset)
-# revisar si los elementos del primer set estan contenidos en el primer set
+# revisar si los elementos del primer set estan contenidos en el segundo set
 print(menores_30.issuperset(pelo_negro))
 
 # Preguntar si los de pelo negro no tienen pelo rubio (disjoint)
