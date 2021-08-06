@@ -1,11 +1,17 @@
 from django.shortcuts import render
-from personas.models import Persona
+from personas.models import Domicilio, Persona
 from django.http import HttpResponse
 
 def bienvenida(request):
     no_personas = Persona.objects.count()
-    personas = Persona.objects.all()
+    #personas = Persona.objects.all()
+    personas = Persona.objects.order_by('id')
+    no_domicilios = Domicilio.objects.count()
+    #domicilios = Domicilio.objects.all()
+    domicilios = Domicilio.objects.order_by('id')
     return render(request, 'bienvenido.html', {
         'no_personas': no_personas,
-        'personas': personas
+        'personas': personas,
+        'no_domicilios': no_domicilios,
+        'domicilios': domicilios
     })
