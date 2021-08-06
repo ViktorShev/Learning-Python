@@ -1,11 +1,11 @@
 from django.shortcuts import render
+from personas.models import Persona
 from django.http import HttpResponse
 
 def bienvenida(request):
-    return HttpResponse('Hola mundo desde Django')
-
-def despedida(request):
-    return HttpResponse('Adiós desde Django')
-
-def contacto(request):
-    return HttpResponse('Email: mail@django.com - Num. de telefono: +79883683415')
+    no_personas = Persona.objects.count()
+    personas = Persona.objects.all()
+    return render(request, 'bienvenido.html', {
+        'no_personas': no_personas,
+        'personas': personas
+    })
