@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, session
 from flask.helpers import url_for
 from flask.json import jsonify
 from werkzeug.exceptions import abort
@@ -7,12 +7,31 @@ from werkzeug.utils import redirect
 
 app = Flask(__name__)
 
-#http://localhost:5000/
+app.secret_key = 'key'
 
+#http://localhost:5000/
 @app.route('/')
 def inicio():
-    app.logger.info(f'Entering the path: {request.path}')                
-    return 'Hola Mundo desde Flask.'
+    if 'username' in session:
+        return render_template('inicio.html', user=session['username']) 
+    else:
+        return redirect(url_for('login'))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Omitimos validacion del usuario y su contraseña
+        # Agregar el usuario a la sesion
+        session['username'] = request.form['username']
+        return redirect(url_for('inicio'))
+
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username')
+    return redirect(url_for('inicio'))
+
 
 @app.route('/saludar/<nombre>')
 def saludar(nombre):
