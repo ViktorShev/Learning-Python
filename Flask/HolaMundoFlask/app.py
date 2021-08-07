@@ -1,4 +1,6 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
+from flask.helpers import url_for
+from werkzeug.utils import redirect
 
 
 app = Flask(__name__)
@@ -20,4 +22,8 @@ def mostrar_edad(edad):
 
 @app.route('/mostrar/<nombre>', methods=['GET', 'POST'])
 def mostrar_nombre(nombre):
-    return f'Tu nombre es: {nombre}'
+    return render_template('mostrar.html', nombre=nombre)
+
+@app.route('/redir')
+def redir():
+    return redirect(url_for('mostrar_nombre', nombre='Juan'))
