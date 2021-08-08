@@ -1,0 +1,24 @@
+class ConvertidorTemperatura:
+
+    MAX_CELSIUS = 100
+    MAX_FAHRENHEIT = 213
+
+    @classmethod
+    def c_f(cls, celsius):
+        if celsius > cls.MAX_CELSIUS:
+            raise ValueError(f'Temperatura C demasiado alta: {celsius}')
+        else:
+            return celsius * 9/5 + 32
+
+    @classmethod
+    def f_c(cls, fah):
+        if fah > cls.MAX_FAHRENHEIT:
+            raise ValueError(f'Temperatura F demasiado alta: {fah}')
+        else:
+            return (fah-32) * 5/9
+
+if __name__ == '__main__':
+    resultado = ConvertidorTemperatura.c_f(150)
+    print(f'15 C a F = {resultado:.2f}')
+    resultado = ConvertidorTemperatura.f_c(10)
+    print(f'10 F a C = {resultado:.2f}')
