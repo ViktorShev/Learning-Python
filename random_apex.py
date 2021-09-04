@@ -23,18 +23,19 @@ def random_weapons():
     return rand_weapons
 
 
-print('Welcome to the Apex Legends squad and loadout randomizer!')
-print('Press g to generate a random squad and random loadouts or press x to exit the program!')
-while True:
-    choice = input('')
-    if choice == 'g':
-        legend1, legend2, legend3 = random_legends()
-        gun1, gun2 = random_weapons()
-        print(f'[Farid]\nLegend: {legend1}\nWeapons: {gun1} - {gun2}\n')
-        gun1, gun2 = random_weapons()
-        print(f'[Adam]\nLegend: {legend2}\nWeapons: {gun1} - {gun2}\n')
-        gun1, gun2 = random_weapons()
-        print(f'[wrong]\nLegend: {legend3}\nWeapons: {gun1} - {gun2}\n')
-    elif choice == 'x':
-        print('Exiting program... ')
-        break
+if __name__ == '__main__':
+    print('Welcome to the Apex Legends squad and loadout randomizer!')
+    print('Press g to generate a random squad and random loadouts or press x to exit the program!')
+    while True:
+        choice = input('')
+        if choice == 'g':
+            legend1, legend2, legend3 = random_legends()
+            gun1, gun2 = random_weapons()
+            print(f'[Farid]\nLegend: {legend1}\nWeapons: {gun1} - {gun2}\n')
+            gun1, gun2 = random_weapons()
+            print(f'[Adam]\nLegend: {legend2}\nWeapons: {gun1} - {gun2}\n')
+            gun1, gun2 = random_weapons()
+            print(f'[wrong]\nLegend: {legend3}\nWeapons: {gun1} - {gun2}\n')
+        elif choice == 'x':
+            print('Exiting program... ')
+            break
