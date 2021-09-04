@@ -22,7 +22,7 @@ class Persona:
         return f'{self.__class__.__name__} con nombre {self.nombre} y apellido {self.apellido}'
 
 p1 = Persona('Juan', 'Perez')
-# repr (!r) (al llamar print sin tener el metodo str sobre escrito, print llama str, el cual implicitamente llama al metodo __repr__)
+# repr (!r) (al llamar print sin tener el metodo str sobreescrito, print llama str, el cual implicitamente llama al metodo __repr__)
 print(f'Mi objeto persona1: {p1!r}')
 
 # str (de manera automatica el metodo print llama al metodo str)
