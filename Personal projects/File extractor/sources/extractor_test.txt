@@ -1,0 +1,4 @@
+SOURCES GATHERED FROM: https://www.python.org/
+
+src="/static/img/python-logo.png"
+
