@@ -1,5 +1,5 @@
 from classes import Player, Planet, Universe
-from functions import register, log_in
+from functions import register, verify_credentials
 
 logged_in = False
 login_or_register = input('Would you want to login or register? r/l: ')
@@ -8,9 +8,16 @@ username = input('Insert your username: ')
 password = input('Insert your password: ')
 
 if login_or_register == 'r':
-    player = register(username, password)
-    print(f'Created new player: {player.username}')
+    new_player = register(username, password)
+    print(f'Successfully created new player: {new_player.username}')
 elif login_or_register == 'l':
-    logged_in = log_in(username, password)
+    try:
+        user_info = verify_credentials(username, password)
+        logged_in = user_info[0]
+    except (TypeError, NameError) as e:
+        print('User does not exist.')
     if logged_in:
-        print('Successfully logged in.')
+        print(f'Successfully logged in into: {user_info[1]}')
+    else:
+        print(f'Incorrect credentials entered for: {user_info[1]}')
+
