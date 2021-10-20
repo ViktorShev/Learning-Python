@@ -1,4 +1,3 @@
-import keyboard
 import hashlib
 from classes import Player
 from db_connection import Connection
@@ -11,7 +10,7 @@ salt_dict = {
     4: 'saltysalt',
     5: 'normalsalt'
 }
-
+ 
 
 def hasher(password, salt_id=None):
     salt = salt_dict[salt_id].encode('utf-8')
@@ -46,4 +45,4 @@ def verify_credentials(username, password):
     if user_info[2] != hash:
         return False, user_info[1]
     elif user_info[2] == hash:
-        return True, user_info[1]
+        return True, user_info[1], user_info[3]

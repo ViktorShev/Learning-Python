@@ -44,22 +44,22 @@ pack_it(x, y, z)
 #args = ['Cullen', 'McDonough']
 #unpack_it(*args)
 #
-#def func(**losers): #**kwargs
-#    print(losers)
-#    print(losers['a'])
-#    print(type(losers))
+def func(**losers): #**kwargs
+    print(losers)
+    print(losers['a'])
+    print(type(losers))
 #
 #func(a='Edsel', b='Betamax', c='mGaetz')
 #
 #def func1(a, b, c):
 #    print(a)
 #    
-#losers = {
-#    'a': 'Edsel',
-#    'b': 'Betamax',
-#    'c': 'mGaetz'
-#}
-#func1(**losers)
+losers = {
+   'a': 'Edsel',
+   'b': 'Betamax',
+   'c': 'mGaetz'
+}
+func(**losers)
 
 
 #def regresa_varios_datos():
