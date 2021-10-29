@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/python3
 
 # Native modules
 import os
@@ -30,7 +30,7 @@ with open(pathToFile, 'r') as f:
 
 schemas = {
     'https': 'https://',
-    'http': 'https://',
+    'http': 'http://',
     'ftp': 'ftp://'
 }
 
