@@ -14,7 +14,7 @@ import argparse
 
 # Initializing terminal parser and adding commands
 
-parser = CustomArgumentParser(prog='HTTPChecker 1.0', description='Check for working/listening web-servers')
+parser = CustomArgumentParser(prog='HTTPChecker 1.1', description='Check for working/listening web-servers')
 
 parser.add_argument('-f', '--file', metavar='\b', required=True)
 parser.add_argument('-o', '--output', metavar='\b')
