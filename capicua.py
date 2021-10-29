@@ -12,7 +12,7 @@ word = input('Ingerese una palabra: ')
 #
 #print(capicua(word))
 
-def capicua(word):
+def capicua (word):
     is_capicua = False
     index = 0
     for i in reversed(range(len(word))):
