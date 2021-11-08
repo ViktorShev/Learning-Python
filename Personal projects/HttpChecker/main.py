@@ -72,8 +72,8 @@ def process_domains(domains_list):
 
     return saved_results_for_output_file
 
-def save_file(save=False, file=None, results_list=[]):
-    if save and file:
+def save_file(file=None, results_list=[]):
+    if file:
         with open(file, 'w+') as f:
             for result in results_list:
                 f.write(f'{result}\n')
@@ -85,4 +85,4 @@ domains_list = get_list_from_domains_file()
 file = parse_args().__dict__['output']
 add_schema_to_domains(domains_list)
 results = process_domains(domains_list)
-save_file(save=bool(file), file=file, results_list=results)
+save_file(file=file, results_list=results)
