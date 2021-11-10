@@ -18,7 +18,7 @@ class CustomArgumentParser(argparse.ArgumentParser):
 --add-schema       Add the specified schema to the start of all hosts in the file (https / http / ftp).
 -t, --threads      Specify the amount of threads to use when making HTTP requests.
 
-Usage example:     httpcheck -f D:/test.txt -o results.txt --add-schema https -t 10'''
+Usage example:     httpcheck -f D:/domains.txt -o results.txt --add-schema https -t 10'''
 
         file.write(message+'\n')
 
@@ -43,7 +43,7 @@ def get_list_from_domains_file():
 def add_schema_to_domains(domains_list):
     schemas = {'https': 'https://', 'http': 'http://', 'ftp': 'ftp://'}
     schema = parse_args().__dict__['add_schema']
-    if schema is not None:
+    if schema:
         for i in range(len(domains_list)):
             domains_list[i] = schemas[schema] + domains_list[i]
     else:
