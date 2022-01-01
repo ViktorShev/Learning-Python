@@ -1,2 +1,4 @@
-# Shrink videos down to the 8mb Discord file size limit.
+import os
+import sys
 
+print(sys.argv)
